@@ -1,0 +1,32 @@
+{
+  "name": "netclajs",
+  "version": "0.0.1",
+  "description": "NetClajs is a API wrap for new version of web learning of Tsinghua University",
+  "author": {
+    "name": "vuryleo"
+  },
+  "license": "MIT",
+  "main": "netclajs.coffee",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha -R spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/vuryleo/netclajs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vuryleo/netclajs/issues"
+  },
+  "keywords": [
+    "Tsinghua University"
+  ],
+  "dependencies": {
+  },
+  "devDependencies": {
+    "mocha": "1.18.2"
+  },
+}
