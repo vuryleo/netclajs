@@ -18,7 +18,6 @@ class NetClajs
           callback null
       else
         callback new Error 'login failed'
-      console.log @cookies
   checkLogin: (callback, next) ->
     @request.get urls.dashboard, (err, res, body) =>
       if res.statusCode is 302
@@ -31,8 +30,12 @@ class NetClajs
         next()
   courselist: (callback) ->
     @checkLogin callback, () =>
-      @request.get urls.courselist, (err, res, body) =>
-        callback err, body
+      @request.get urls.currentweek, (err, res, body) =>
+        callback err if err
+        currentWeek = JSON.parse body
+        @request.get urls.courselist + '/' + currentWeek.currentSemester.id, (err, res, body) =>
+          callback err if err
+          callback null, JSON.parse(body).resultList
 
 module.exports = NetClajs
 
