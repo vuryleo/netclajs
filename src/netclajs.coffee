@@ -3,7 +3,9 @@ url = require 'url'
 urls = require './urls'
 
 class NetClajs
-  constructor: (@username, @password) ->
+  constructor: (config) ->
+    @username = config.username
+    @password = config.password
     @cookies = request.jar()
     @request = request.defaults jar: @cookies, followRedirect: false
   login: (callback) ->
