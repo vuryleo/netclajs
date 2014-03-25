@@ -23,7 +23,7 @@ netclajs.login (err) ->
 ```
 
 ### Get Course List
-`NetClajs.courselist` will fetch the course list of that user.
+`NetClajs.prototype.courselist` will fetch the course list of that user.
 
 ```coffeescript
 netclajs.courselist (err, list) ->
